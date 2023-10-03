@@ -34,6 +34,7 @@ public class SimpleFollow : MonoBehaviour
             return;
         }
 
+        transform.LookAt(target.transform);
 
         transform.Translate(direction.normalized * Time.deltaTime * speed, Space.World);
     }

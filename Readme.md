@@ -46,11 +46,11 @@ There ain't fun yet. We need some obstacles, some difficulty throught the gamepl
 
 Let's generate some random objects around the scene.
 
-```c-sharp 
+```c-sharp
         // GenerateMap.cs
         for (int i = 0; i < amount; i++)
         {
-            // I need some space for player to start, but with limits. This isn't No man's Sky. 
+            // I need some space for player to start, but with limits. This isn't No man's Sky.
             var distance = Random.Range(innerRadius, outerRadius);
             // The angle to where will be placing our obstacle
             var angle = Random.Range(0, 360f);
@@ -70,7 +70,7 @@ It isn't enough. They are just objects in random positions with no interaction. 
     // PlayerReaction.cs
     void OnCollisionEnter(Collision other)
     {
-        // When we touch those objects with the player, those will react to us. 
+        // When we touch those objects with the player, those will react to us.
         if (other.gameObject.CompareTag("Player") && !_playerCollision)
         {
             _playerCollision = true;
@@ -138,7 +138,7 @@ public class UIScore : MonoBehaviour
     [SerializeField]
     private Gameplay _gameplay;
 
-    // Our label where the puntuation is 
+    // Our label where the puntuation is
     private TMPro.TextMeshProUGUI _text;
 
     // Start is called before the first frame update
@@ -170,6 +170,11 @@ public class UIScore : MonoBehaviour
 ```
 
 That's it. We could keep adding more gameplay like reset the level, once all objects are turned red. Make the follower turn off those objects... Only your imagination is your limit here.
+
+![](.output2.mp4)
+fdsfasdf
+
+<video src="output2.mp4" controls title="Title"></video>
 
 In next post we will improve how to manage this Gameplay object to avoid manually reference it.
 
