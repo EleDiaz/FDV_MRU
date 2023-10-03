@@ -2,14 +2,14 @@
 
 Let's move some objects around the scene. One of them will play catch and the other will be fully manage by the user. To achieve this will overuse a simple formula to represent movement of an object througth time.
 
-```c-sharp
+```csharp
 position = position_0 + velocity * time_lapse
 ```
 
 - `position_0` it will be our initial position, it can be a 2d or 3d vector.
 - `time_lapse` will be the diff between when `position_0` was calculated and the actual time. Also named delta time. Which in our case will be the time-lapse between each new frame generate by the render.
 
-```c-sharp
+```csharp
     // CharacterMovement.cs
     void Update()
     {
@@ -34,7 +34,7 @@ position = position_0 + velocity * time_lapse
 
 For the case of the object that will keep following the player. The direction won't be given by the user, but by the direction where the player is place in relation with this object.
 
-```c-sharp
+```csharp
         // SimpleFollow.cs
         var direction = target.transform.position - transform.position;
         // ...
@@ -46,7 +46,7 @@ There ain't fun yet. We need some obstacles, some difficulty throught the gamepl
 
 Let's generate some random objects around the scene.
 
-```c-sharp
+```csharp
         // GenerateMap.cs
         for (int i = 0; i < amount; i++)
         {
@@ -66,7 +66,7 @@ Let's generate some random objects around the scene.
 
 It isn't enough. They are just objects in random positions with no interaction. The player has to bring life to those.
 
-```c-sharp
+```csharp
     // PlayerReaction.cs
     void OnCollisionEnter(Collision other)
     {
@@ -89,7 +89,7 @@ It isn't enough. They are just objects in random positions with no interaction. 
 
 What gameplay do we have? That score has some meaningful use? The simple answer is NO. Take a look `GamePlay.cs`
 
-```c-sharp
+```csharp
 public class Gameplay : MonoBehaviour
 {
     // We need some internal state for our game
@@ -130,7 +130,7 @@ public class Gameplay : MonoBehaviour
 
 Amazing, but do we have an object that would care about this score? Yes, the user. But the user won't be looking at the debub console to look for a score. We need to show them the score on screen.
 
-```c-sharp
+```csharp
 public class UIScore : MonoBehaviour
 {
 
@@ -171,10 +171,9 @@ public class UIScore : MonoBehaviour
 
 That's it. We could keep adding more gameplay like reset the level, once all objects are turned red. Make the follower turn off those objects... Only your imagination is your limit here.
 
-![](.output2.mp4)
-fdsfasdf
 
-<video src="output2.mp4" controls title="Title"></video>
+https://github.com/EleDiaz/FDV_MRU/assets/2550542/c9cc6ca6-4cca-431d-910e-3991189d237d
+
 
 In next post we will improve how to manage this Gameplay object to avoid manually reference it.
 
