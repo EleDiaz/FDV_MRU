@@ -1,5 +1,7 @@
 # Moving forward on Unity
 
+![](scene.png)
+
 Let's move some objects around the scene. One of them will play catch and the other will be fully manage by the user. To achieve this will overuse a simple formula to represent movement of an object througth time.
 
 ```csharp
@@ -63,6 +65,8 @@ Let's generate some random objects around the scene.
             // ...
         }
 ```
+
+![](./map.png)
 
 It isn't enough. They are just objects in random positions with no interaction. The player has to bring life to those.
 
