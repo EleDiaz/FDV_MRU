@@ -9,8 +9,8 @@ public class Gameplay : MonoBehaviour
         get { return _score; }
         set
         {
-            scoreChanged?.Invoke(value);
             _score = value;
+            scoreChanged?.Invoke(value);
         }
     }
 
@@ -19,8 +19,8 @@ public class Gameplay : MonoBehaviour
         get { return _maxScore; }
         set
         {
-            maxScoreChanged?.Invoke(value);
             _maxScore = value;
+            maxScoreChanged?.Invoke(value);
         }
     }
 

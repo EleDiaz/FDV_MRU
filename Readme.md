@@ -114,9 +114,9 @@ public class Gameplay : MonoBehaviour
         get { return _score; }
         set
         {
+            _score = value;
             // ... we take care when some procedures happens, and notify all the parties subscribed
             scoreChanged?.Invoke(value);
-            _score = value;
         }
     }
 
@@ -125,8 +125,8 @@ public class Gameplay : MonoBehaviour
         get { return _maxScore; }
         set
         {
-            maxScoreChanged?.Invoke(value);
             _maxScore = value;
+            maxScoreChanged?.Invoke(value);
         }
     }
     //...
